@@ -1,0 +1,19 @@
+     1                                  global _start
+     2                                  
+     3                                  section .data
+     4 00000000 4D4950540A00                msg db "MIPT", 0xA, 0
+     5                                      lenmsg equ $ - msg
+     6                                  
+     7                                  section .bss
+     8                                  
+     9                                  section .text
+    10                                  
+    11                                  _start:
+    12 00000000 B804000000                  mov eax, 4
+    13 00000005 BB01000000                  mov ebx, 1
+    14 0000000A B9[00000000]                mov ecx, msg
+    15 0000000F BA06000000                  mov edx, lenmsg
+    16 00000014 CD80                        int 0x80
+    17 00000016 B801000000                  mov eax, 1
+    18 0000001B BB00000000                  mov ebx, 0
+    19 00000020 CD80                        int 0x80

@@ -1,0 +1,21 @@
+     1                                  global _start
+     2                                  
+     3                                  section .data
+     4 00000000 [00000000]                  xy dd pointer
+     5                                  
+     6                                  section .bss
+     7 00000000 ????????                    pointer resd    1
+     8 00000004 ????????                    x       resd    1
+     9 00000008 ????????                    y       resd    1
+    10                                  
+    11                                  section .text
+    12                                  
+    13                                  _start:
+    14 00000000 C705[04000000]-             mov     dword[x],  xy
+    14 00000006 [00000000]         
+    15 0000000A C705[00000000]-             mov     dword[xy], y
+    15 00000010 [08000000]         
+    16                                  
+    17 00000014 B801000000                  mov eax, 1
+    18 00000019 BB00000000                  mov ebx, 0
+    19 0000001E CD80                        int 0x80

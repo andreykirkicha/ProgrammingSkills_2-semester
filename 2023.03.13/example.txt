@@ -1,0 +1,17 @@
+global _start
+
+section .data
+    msg db "MIPT", 0xA, 0           (0xA - код перевода строки, 0 - конец строки)
+    lenmsg equ $ - msg              ($ - текущий адрес, вычитая адрес msg, получаем длину строки)
+section .bss
+
+section .text
+
+_start:
+    mov eax, 3                      (ввод)
+    mov ebx, 2                      (вывод на экран)
+    mov ecx, msg
+    mov edx, lenmsg
+
+    mov eax, 1
+    int 0x80                        (прерывание)
