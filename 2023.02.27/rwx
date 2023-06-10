@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+char *convert_to_bin(int dec);
+
+int main() {
+    char input[3] = {};
+    int i = 0;
+
+    scanf("%s", input);
+
+    for (i = 0, i < 3; i++) {
+        
+    }
+    
+    return 0;
+}
+
+char *convert_to_bin(int dec) {
+    int i = 0;
+    char *result = (char *)malloc(3 * sizeof(char));
+
+    for (i = 0; i < 3; i++) {
+        
+    }
+}
